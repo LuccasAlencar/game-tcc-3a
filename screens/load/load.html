@@ -3,21 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <link rel="icon" href="assets/icon.png" type="image/png">
+    <title>Carregar Fase</title>
+    <link rel="icon" href="../../assets/icon.png" type="image/png">
     <link rel="stylesheet" href="load.css">
 </head>
 <body>
-    
+
     <button class="btn-voltar" onclick="window.location.href='../../index.html'">Voltar</button>
+
     <div class="menu-container">
-        <!-- Cada quadrado tem a classe geral "square" e uma classe única "img-X" -->
-        <a href="tela1.html" class="square img-1"></a>
-        <a href="tela2.html" class="square img-2"></a>
-        <a href="tela3.html" class="square img-3"></a>
-        <a href="tela4.html" class="square img-4"></a>
-        <a href="tela5.html" class="square img-5"></a>
+        <!-- Cada quadrado recebe data-fase para o script identificar qual fase abrir -->
+        <div class="square img-1" data-fase="1"></div>
+        <div class="square img-2" data-fase="2"></div>
+        <div class="square img-3" data-fase="3"></div>
+        <div class="square img-4" data-fase="4"></div>
+        <div class="square img-5" data-fase="5"></div>
     </div>
+
+    <script>
+        // Lê a fase máxima desbloqueada — padrão 1 (apenas Floresta disponível de início)
+        const faseMax = parseInt(localStorage.getItem('parkourFaseMax') || '1');
+
+        document.querySelectorAll('.square').forEach(el => {
+            const faseNum = parseInt(el.dataset.fase);
+
+            if (faseNum <= faseMax) {
+                // Fase desbloqueada: abre o jogo na fase correta ao clicar
+                el.classList.add('desbloqueada');
+                el.addEventListener('click', () => {
+                    window.location.href = `../../game.html?fase=${faseNum}`;
+                });
+            } else {
+                // Fase bloqueada: adiciona cadeado visual e bloqueia o clique
+                el.classList.add('bloqueada');
+            }
+        });
+    </script>
 
 </body>
 </html>
