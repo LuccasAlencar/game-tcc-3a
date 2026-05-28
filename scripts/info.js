@@ -10,6 +10,14 @@ btnInfo.addEventListener('click', () => {
     popupInfo.classList.add('ativo');
 });
 
+// Botão Iniciar abre o jogo
+const btnIniciar = document.querySelector('.btn-imagem-iniciar');
+if (btnIniciar) {
+    btnIniciar.addEventListener('click', () => {
+        window.location.href = 'game.html';
+    });
+}
+
 // Função para fechar Informações
 function fecharPopupInfo() {
     overlayParaInfo.classList.remove('ativo');

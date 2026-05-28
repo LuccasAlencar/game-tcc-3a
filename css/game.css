@@ -1,0 +1,35 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+#game-container canvas {
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    min-width: 100dvw;
+    max-height: 100dvh;
+    object-fit: contain;
+}
+
+#btn-voltar-menu {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+}
+#btn-voltar-menu:hover { background: rgba(60,60,120,0.8); }
