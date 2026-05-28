@@ -13,8 +13,8 @@ export const INVINCIBLE_DURATION = 1600; // duração do período de invencibili
 
 // ─── Física do jogador ─────────────────────────────────────────────────────────
 export const GRAVITY_Y = 1.0;  // força da gravidade vertical no Matter.js
-export const VY_PULO   = -14;  // velocidade Y aplicada ao pular (negativo = para cima)
-export const VEL_X     = 7;    // velocidade horizontal máxima do jogador em px/frame
+export const VY_PULO   = -8;  // velocidade Y aplicada ao pular (negativo = para cima)
+export const VEL_X     = 8;    // velocidade horizontal máxima do jogador em px/frame
 
 // ─── Dimensões do mundo ────────────────────────────────────────────────────────
 export const MUNDO_H    = 600; // altura total do mundo em pixels
